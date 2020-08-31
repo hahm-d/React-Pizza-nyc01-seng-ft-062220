@@ -15,7 +15,14 @@ class PizzaList extends Component {
         </thead>
         <tbody>
           {
-            //render Pizza here
+          this.props.pizzas.map(pizzaObj => {
+            return <Pizza 
+            key={pizzaObj.id}
+            id={pizzaObj.id} 	                
+            topping={pizzaObj.topping} 
+            size={pizzaObj.size} 
+            vegetarian={pizzaObj.vegetarian}
+            populateForm={this.props.populateForm}/>})
           }
         </tbody>
       </table>
